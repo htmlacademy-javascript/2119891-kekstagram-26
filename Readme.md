@@ -1,6 +1,6 @@
 # Личный проект «Кекстаграм»
 
-* Студент: [Дарья Климина](https://up.htmlacademy.ru/javascript/26/user/2119891).
+* Студент: [Дарья Клим ина](https://up.htmlacademy.ru/javascript/26/user/2119891).
 * Наставник: `Неизвестно`.
 
 ---
