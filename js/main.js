@@ -1,19 +1,17 @@
-const generateRandom = function(min, max) {
-  if (min < 0 && max >= min) {
-    return 0;
+const generatePositiveRandom = function(leftRange, rightRange) {
+  if (leftRange < 0 || rightRange < 0) {
+    throw new RangeError('Данные некорректны, границы диапазона не должны быть отрицательнцми числами');
   }
-  if (min > max) {
-    return NaN;
+  if (leftRange === rightRange) {
+    return leftRange;
   }
-  if (min === max) {
-    return min;
-  }
-  return Math.floor(Math.random() * (max - (min - 1))) + min;
+  const maxValue = Math.max(leftRange, rightRange);
+  const minValue = Math.min(leftRange, rightRange);
+  return Math.floor(Math.random() * (maxValue - (minValue - 1))) + minValue;
 };
-generateRandom(6, 66);
+generatePositiveRandom(6, 66);
 
 const checkCommentLength = function (comment, permissibleLength) {
   return (comment.length <= permissibleLength);
 };
 checkCommentLength('Hello World!', 5);
-
