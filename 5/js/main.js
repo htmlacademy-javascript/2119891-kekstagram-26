@@ -1,3 +1,6 @@
+const MAX_COMMENTS_COUNT = 10;
+const PICTURES_COUNT = 25;
+
 const generatePositiveRandom = function(leftRange, rightRange) {
   if (leftRange < 0 || rightRange < 0) {
     throw new RangeError('Данные некорректны, границы диапазона не должны быть отрицательнцми числами');
@@ -24,15 +27,14 @@ const messages = ['Всё отлично!',
 
 const names = ['Порфирий', 'Евстратий', 'Глафира', 'Иннокентий'];
 
-let commentId = 1;
-
 const getRandomFromArray = function (array) {
   return array[generatePositiveRandom(0, array.length - 1)];
 };
-const maxCommentCount = 10;
+
+let commentId = 1;
 const generateSomeComments = function() {
   const comments = [];
-  for (let i = 0; i < generatePositiveRandom(1, maxCommentCount); i++) {
+  for (let i = 0; i < generatePositiveRandom(1, MAX_COMMENTS_COUNT); i++) {
     const comment = {
       id: commentId,
       avatar: `img/avatar-${ generatePositiveRandom(1, 6) }.svg`,
@@ -45,9 +47,8 @@ const generateSomeComments = function() {
   return comments;
 };
 
-const maxPicturesCount = 25;
 const pictures = [];
-for (let i = 0; i < maxPicturesCount; i++) {
+for (let i = 0; i < PICTURES_COUNT; i++) {
   const strId = i + 1;
   const picture = {
     id: strId,
